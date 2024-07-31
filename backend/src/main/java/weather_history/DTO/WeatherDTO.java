@@ -7,5 +7,8 @@ public class WeatherDTO {
     private Long id;
     private String date;
     private String city;
+    private String country;
     private String weather;
+    private String description;
+    private String temperature;
 }

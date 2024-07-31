@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "weather_history")
+@Table(name = "favourite_cities")
 public class WeatherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,15 @@ public class WeatherEntity {
     @Column(name = "city")
     private String city;
 
+    @Column(name = "country")
+    private String country;
+
     @Column(name = "weather")
     private String weather;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "temperature")
+    private String temperature;
 }

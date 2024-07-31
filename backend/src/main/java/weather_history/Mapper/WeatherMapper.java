@@ -9,7 +9,10 @@ public class WeatherMapper {
         weatherDTO.setId(weatherEntity.getId());
         weatherDTO.setDate(weatherEntity.getDate());
         weatherDTO.setCity(weatherEntity.getCity());
+        weatherDTO.setCountry(weatherEntity.getCountry());
         weatherDTO.setWeather(weatherEntity.getWeather());
+        weatherDTO.setDescription(weatherEntity.getDescription());
+        weatherDTO.setTemperature(weatherEntity.getTemperature());
         return weatherDTO;
     }
     public static WeatherEntity mapToWeatherEntity(WeatherDTO weatherDTO) {
@@ -17,7 +20,10 @@ public class WeatherMapper {
         weatherEntity.setId(weatherDTO.getId());
         weatherEntity.setDate(weatherDTO.getDate());
         weatherEntity.setCity(weatherDTO.getCity());
+        weatherEntity.setCountry(weatherDTO.getCountry());
         weatherEntity.setWeather(weatherDTO.getWeather());
+        weatherEntity.setDescription(weatherDTO.getDescription());
+        weatherEntity.setTemperature(weatherDTO.getTemperature());
         return weatherEntity;
     }
 }

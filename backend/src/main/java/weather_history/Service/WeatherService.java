@@ -2,7 +2,6 @@ package weather_history.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import weather_history.DTO.WeatherDTO;
 import weather_history.Mapper.WeatherMapper;
 import weather_history.Model.WeatherEntity;
