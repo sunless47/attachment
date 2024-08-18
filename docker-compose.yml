@@ -1,0 +1,40 @@
+services:
+  backend:
+    image: backend
+    container_name: backend
+    build:
+      context: ./backend
+      # dockerfile: backend/Dockerfile
+    # ports:
+    #   - 8080:8080
+    # volumes:
+    # - ./backend:/usr/src/weather-app/backend
+    depends_on:
+      - mymaria
+    environment:
+      SPRING.DATASOURCE.URL: jdbc:mysql://mymaria:3306/favouriteCities?createDatabaseIfNotExist=true
+      SPRING.DATASOURCE.USERNAME: mysql
+      SPRING.DATASOURCE.PASSWORD: 123
+
+  mymaria:
+    image: mariadb:11.2.4
+    container_name: mymaria
+    # ports:
+    # - 3306:3306
+    # volumes:
+    #   - mymaria:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: yes
+      MARIADB_USER: mysql
+      MARIADB_PASSWORD: 123
+      MARIADB_DATABASE: favouriteCities
+
+  # frontend:
+  #   container_name: frontend
+  #   ports:
+  #     - 4200:4200
+  #   volumes:
+  #     - frontend:/usr/src/weather-app/frontend
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: frontend/Dockerfile
